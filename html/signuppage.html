@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagecontainer{
+            display: flex;
+            justify-content: center;
+            
+           
+        }
+        .maincontainer{
+            display:flexbox;
+            position: absolute;
+            border:1px solid black;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            max-width: 400px;  
+            
+        }
+        .container{
+            border:1px solid black;
+            padding: 10px 0px 10px 0px;
+            display: flex;
+            flex-wrap: wrap;
+            flex:1 1 auto;
+            margin-left: 35px;
+            margin-right: 35px;
+            margin-bottom: 30px;
+            justify-content: center;
+            gap: 10px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagecontainer">
+    <div class="maincontainer">
+        <label>Signup</label>
+        <div class="container">
+            <label>FirstName</label>
+            <input type="text" placeholder="Enter your Firstname" id="fn" required>
+            <label>LastName</label>    
+            <input type="text" placeholder="Enter your Lastname" id="ln">
+            <label>Email Id</label>
+            <input type="email" placeholder="Enter your email here" id="email" required>
+            <label>Password</label>
+            <input type="password" placeholder="******" id="pwd" required>
+            <button type="button" value="Submit" id="btn" onclick="myfunc()">submit</button>
+        </div>
+</div>
+</div>
+<script>
+
+    function myfunc(){
+        alert("this is your first alert!");
+    }
+
+
+</script>
+</body>
+</html>
