@@ -1,15 +1,38 @@
-.pagecontainer{
-    display: flex;
-    justify-content: center;
-    
-   
+*{
+    margin:0;
+    padding:0;
 }
-.maincontainer{
+
+.pagecontainer{
+    /* display: flex;
+    justify-content: center; */
+    display:flexbox; 
+    flex-wrap: wrap;
+    
+    text-align: center;
+    border:1px solid black;
+    max-width: 350px;  
+    margin: 0 auto;
+    /* position: absolute;
+    text-align: center;
+    justify-content: center; 
+    align-items: center; */  
+}
+.pagecontainer>form {
+    padding-top: 10px;
+    
+}
+
+.pagecontainer>form>#btn1 ,#btn2 ,#btn3,#btn4{
+    margin: 10px;
+    
+}
+/* .maincontainer{
     display:flexbox;
     position: absolute;
     border:1px solid black;
     text-align: center;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
     max-width: 400px;  
     
@@ -26,4 +49,4 @@
     justify-content: center;
     gap: 10px;
     max-width: 300px;
-}
+} */
