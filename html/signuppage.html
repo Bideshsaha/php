@@ -9,10 +9,15 @@
     <script src="signuppage.js"></script>
 </head>
 <body>
+    
     <div class="pagecontainer">
     <!-- <div class="maincontainer"> -->
+        
+
+        <div id="success-message">Signed up successfully</div>
+
         <header id="heading">Signup</header>
-        <form action="">
+        <form onsubmit="return myfunc3(event)">
         <!-- <div class="container"> -->
             
             <label>FirstName</label>
@@ -30,7 +35,8 @@
 
         <!-- </div> -->
     </form>
-    <p id="demo"></p>
+     <div class="display-sms"><p id="demo"></p></div> 
+    
     <!-- <p id="demo2"></p> -->
             
 <!-- </div> -->

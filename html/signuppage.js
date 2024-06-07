@@ -16,3 +16,9 @@ function myfunc2(){
     }
     document.getElementById("demo").innerHTML = text;
 }
+function myfunc3(event){
+    event.preventDefault();//prevent the default submit method
+   
+    document.getElementById("success-message").style.display='block';
+    return false;
+}

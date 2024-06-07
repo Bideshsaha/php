@@ -23,6 +23,7 @@
 .head>.logo{
 
     width: 30%;
+   
     padding-left: 1rem;
     
     /* background-color: chartreuse; */
@@ -31,6 +32,11 @@
 #logoImg{
     width: 4rem;
     border-radius: 50%;
+}
+.logo>figure{
+    display: flex;
+    align-items: center;
+    
 }
 .logo>figure>figcaption{
     font-size: 18px;
@@ -125,8 +131,8 @@
 }
 .footer_part{
     width:20%;
-     flex: 1 1 auto;
-     display: flex;
+     /* flex: 1 1 auto;
+     display: flex; */
     /*display: flex;
     justify-content: center;
     align-items: center; */
