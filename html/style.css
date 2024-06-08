@@ -55,9 +55,19 @@
 
 #success-message{
     display: none;
-    color: brown;
+    color: green;
     font-size: 24px;
 
+}
+#error-message1{
+    display: none;
+    color: brown;
+    font-size: 24px;
+}
+#error-message2{
+    display: none;
+    color: brown;
+    font-size: 24px;
 }
 
 #demo{

@@ -18,7 +18,17 @@ function myfunc2(){
 }
 function myfunc3(event){
     event.preventDefault();//prevent the default submit method
-   
-    document.getElementById("success-message").style.display='block';
+
+    let len = document.getElementById("pwd").value.length;
+    
+    if(len<8){
+        document.getElementById("error-message1").style.display='block';
+        
+    }else if(len>=11){
+        document.getElementById("error-message2").style.display='block';
+        
+    }else{
+        document.getElementById("success-message").style.display='block';
+    }
     return false;
 }
