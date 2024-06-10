@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 500px;
+    height: 250px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: flex;
+}
+.container form{
+    width: 40%;
+    margin: 0 auto; 
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.container .display-section{
+    width:40%;
+    margin: 0 auto;
+
+}
+#title{
+    color:brown;
+    font-size: 25px;
+    padding-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center; 
+   
+}
+#validity-displaybox{
+   
+    height: 50%; 
+    border: 1px solid black;
+    color: green;
+    font-size: 25px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+}
+#success-message ,#error-message1,#error-message2{
+    display: none;
+}
