@@ -41,6 +41,7 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    overflow: hidden;
 
 }
 #success-message ,#error-message1,#error-message2{
