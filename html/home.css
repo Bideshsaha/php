@@ -8,65 +8,63 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-/* .container{
+ /* .container{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
 } */
+
 .head{
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: auto;
     margin-top: 10px;
     background-color: rgb(154, 111, 54);
 }
-.head>.logo{
+/* .head>.logo{
 
     width: 30%;
    
     padding-left: 1rem;
     
-    /* background-color: chartreuse; */
-}
+    
+} */
 
 #logoImg {
     width: 4rem;
     border-radius: 50%;
 }
+ 
 .logo>figure{
     display: flex;
     align-items: center;
+    gap:10px;
     
-}
+} 
+
 .logo>figure>figcaption{
     font-size: 18px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.head>#nav{
-    width: 70%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    flex-wrap: wrap;
-    
-    
-    /* background-color: green; */
-}
-.head>#nav>ul{
-    display: flex;
-    gap: 1.9rem;
-    list-style-type: none;
-    
-}
-.head>#nav>ul>li{
 
-    display: inline;
-    font-size: 20px;
-    text-decoration: solid;
-   
-    /* margin-right: 15px; */
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
+.nav ul{
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    margin-right: 5rem;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+
 .imgSection{
     width: 100%;
     height: 75vh;
@@ -82,21 +80,40 @@
 }
 .newPost{
     display: inline-flex; 
-    /* justify-content: end; */
+    /* justify-content: right; */
     align-items: center;
     flex-direction:column;
     width:48%; 
     margin-top: 10px;
     padding: 20px; 
     height: auto;
-    gap:10px
+    gap:10px;
+    overflow: hidden;
+    cursor: pointer;
     
      /* background-color: blueviolet;  */
+    
+}
+.newPost img{
+    width: 100%;
+    object-fit: cover;
+}
+.newPost ul a{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    align-items: end;
+    gap:20px;
+    text-decoration: none;
+    color: rgb(154, 111, 54);
+     
     
 }
 
 .popularPost{
     display: inline-flex;
+    justify-content:left;
     align-items: center;
     flex-direction: column;
     width: 48%; 
@@ -104,10 +121,15 @@
     padding: 20px; 
     margin-left: 15px;
     height: auto;
-    gap:10px
+    gap:10px;
+    cursor: pointer;
     /* margin-right: 10px; */
     /* background-color: brown;  */
     
+}
+.popularPost img{
+    width: 18rem;
+    height: 10rem;
 }
 .newPost li{
     list-style-type: none;
