@@ -1,16 +1,4 @@
 <?php
-    
-    // $age=$_POST["age"];
-
-    // if(array_key_exists('button', $_POST)) { 
-    //     check($age); 
-    // } 
-
- 
-
-
-
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $age = $_POST["age"];
 
