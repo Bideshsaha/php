@@ -5,14 +5,31 @@ let validage = "please enter a valid age";
 let elegible = "you are elegible for voteing.";
 let notelegible = "you are not elegible for voteing.";
 
-if(givenage<=0){
+let agecatagory;
 
-    document.getElementById("validity-displaybox").innerHTML= validage;
+if(givenage<=0){
+    agecatagory='validage';
+    //document.getElementById("validity-displaybox").innerHTML= validage;
 }
 else if(givenage<18){
-    document.getElementById("validity-displaybox").innerHTML= notelegible;
+    agecatagory='notelegible';
+    //document.getElementById("validity-displaybox").innerHTML= notelegible;
 }else{
-    document.getElementById("validity-displaybox").innerHTML= elegible;
+    agecatagory='elegible';
+    //document.getElementById("validity-displaybox").innerHTML= elegible;
+}
+
+
+switch(agecatagory) {
+    case 'validage':
+        document.getElementById("validity-displaybox").innerHTML= validage;
+        break;
+    case 'elegible':
+        document.getElementById("validity-displaybox").innerHTML= elegible;
+        break;
+    case 'notelegible':
+        document.getElementById("validity-displaybox").innerHTML= notelegible;
+        break;
 }
 return false;
 }
