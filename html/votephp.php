@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote condition</title>
-    <link rel="stylesheet" href="vote.css">
+    <link rel="stylesheet" href="./CSS/vote.css">
     
     
 </head>

@@ -1,4 +1,4 @@
-
+console.log("hi");
 function myfunc(){
     alert("this is your first alert!");
 }
