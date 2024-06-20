@@ -44,6 +44,6 @@
     overflow: hidden;
 
 }
-#success-message ,#error-message1,#error-message2{
+#validAge ,#Eligible,#notEligible{
     display: none;
 }
