@@ -9,20 +9,20 @@
             global $validage,$elegible,$notelegible,$catagory;
             
             if ($age <= 0) {
-                $catagory= '$validage';
+                $catagory= 'validage';
             } elseif ($age < 18) {
-                $catagory= '$notelegible';
+                $catagory= 'notelegible';
             } else {
-                $catagory= '$elegible';
+                $catagory= 'elegible';
             }
             switch($catagory){
-                case '$validage':
+                case 'validage':
                     echo"<P>" . $validage . "</P>";
                     break;
-                case '$notelegible':
+                case 'notelegible':
                     echo"<P>" . $notelegible . "</P>";
                     break;
-                case '$elegible':
+                case 'elegible':
                     echo"<P>" . $elegible . "</P>";
                     break;
             }
