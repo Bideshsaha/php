@@ -17,3 +17,16 @@ if($email==$Email and $pass==$password){
 }
 }
 
+// // php array
+// // $array=["bid","bide","bidesh"];
+// // print_r($array);
+// // echo $array['1'];
+// $arr = ["color1"=>"red","color2"=>"green","color3"=>"blue"];
+// // print_r($arr);
+// echo "<ul>";
+// foreach($arr as $color){
+//     echo "<li>";
+//     echo $color;
+//     echo"</li>";
+// }
+// echo "</ul>";

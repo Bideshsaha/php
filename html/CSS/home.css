@@ -2,11 +2,13 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 #wrapper{
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+
 }
  /* .container{
     display: flex;
@@ -22,6 +24,7 @@
     margin-top: 10px;
     background-color: rgb(154, 111, 54);
 }
+
 /* .head>.logo{
 
     width: 30%;

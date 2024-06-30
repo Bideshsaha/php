@@ -24,10 +24,7 @@ form{
 }
 #message{
     display: flex;
-    justify-content: center;
-    
-    
-    
+    justify-content: center;  
 }
 /* form input[type="submit"]{
     width:fit-content;
