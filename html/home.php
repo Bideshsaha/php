@@ -24,8 +24,8 @@
                         <li>Blog</li>
                         <li>Contact Us</li>
                         <li>About Us</li>
-                       <li id="login">login</li> 
-                        <li>SignUp</li>
+                       <li><a href="loginpage.php" target="_blank">login</a></li> 
+                        <li><a href="signuppage.html" target="_blank">Sign up</a></li>
                     </ul>
                 
                 </nav>
