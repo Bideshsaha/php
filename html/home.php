@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Home</title>
-    <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="./CSS/homE.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./JS/home.js"></script>
 </head>
 <body>
     <div id="wrapper">
         <!-- <div class="conatiner"> -->
+            <div class="upperHeader">
+                <div class="left-part-upperHeader">
+                    <i><i class="fa-brands fa-facebook"></i></i>
+                    <i><i class="fa-brands fa-instagram"></i></i>
+                    <i><i class="fa-brands fa-linkedin"></i></i>
+                    <i><i class="fa-brands fa-youtube"></i></i>
+                </div>
+                <div class="right-part-upperHeader">
+                    <p>sahabidesh523@gmail.com | 7003193887</p>
+                </div>
+            </div>
             <header class="head" id="headid">
                 <div class="logo">
                     <figure>
@@ -31,7 +44,7 @@
                 </nav>
             </header>
             <div class="imgSection">
-                <img src="./images/homepage-images/west-bengal.jpg" alt="" id="slideImg">
+                <img src="./images/homepage-images/M.jpg" alt="" id="slideImg">
             </div>
             <div class="newPost">
                 <h3>New posts</h3>

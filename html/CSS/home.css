@@ -8,32 +8,32 @@
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    
 
 }
- /* .container{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-} */
 
 .head{
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: auto;
-    margin-top: 10px;
+    /* background-color: rgb(154, 111, 54); */
+}
+.upperHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    height: 2rem;
     background-color: rgb(154, 111, 54);
 }
-
-/* .head>.logo{
-
-    width: 30%;
-   
-    padding-left: 1rem;
-    
-    
-} */
-
+.left-part-upperHeader{
+    display: flex;
+    gap: 2rem;
+}
+.left-part-upperHeader i{
+    font-size:x-large;
+}
 #logoImg {
     width: 4rem;
     border-radius: 50%;
@@ -71,14 +71,10 @@
 .imgSection{
     width: 100%;
     height: 75vh;
-    /* margin-top: 5px; */
-    
-    /* background-color: aqua; */
 }
 .imgSection>img{
     width: 100%;
     height: 100%;
-    padding: 5px 10px;
    
 }
 .newPost{
@@ -94,15 +90,12 @@
     overflow: hidden;
     cursor: pointer;
     
-     /* background-color: blueviolet;  */
-    
 }
 .newPost img{
     width: 100%;
     object-fit: cover;
 }
-.newPost ul a{
-    
+.newPost ul a{ 
     display: flex;
     flex-wrap: wrap;
     justify-content:left;
@@ -110,7 +103,6 @@
     gap:20px;
     text-decoration: none;
     color: rgb(154, 111, 54);
-     
     
 }
 
@@ -126,8 +118,6 @@
     height: auto;
     gap:10px;
     cursor: pointer;
-    /* margin-right: 10px; */
-    /* background-color: brown;  */
     
 }
 .popularPost img{
@@ -162,12 +152,6 @@
 }
 .footer_part{
     flex:25%;
-    /* width:20%; */
-     /* flex: 1 1 auto;
-     display: flex; */
-    /*display: flex;
-    justify-content: center;
-    align-items: center; */
 
 }
 .belowfooter{
