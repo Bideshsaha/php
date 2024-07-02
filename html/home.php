@@ -61,12 +61,42 @@
             </div>
             <div class="popularPost">
                 <h3>Popular posts</h3>
-                <ul>
+                 <?php
+                    $popularPost = [
+                        [
+                            'feature_image' => './images/homepage-images/F1.jpg',
+                            'caption' => 'This is the first post',
+                            'author' => 'Author 1'
+                        ],
+                        [
+                            'feature_image' => './images/homepage-images/F2.jpg',
+                            'caption' => 'This is the second post',
+                            'author' => 'Author 1'
+                        ],                        
+                        [
+                            'feature_image' => './images/homepage-images/F3.png',
+                            'caption' => 'This is the third post',
+                            'author' => 'Author 1'
+                        ],
+
+                    ]
+                ?>
+                    <?php 
+                    echo "<ul>";
+                        foreach($popularPost as $post){
+                            echo "<li>";
+                            echo '<a href="#"> <img src="' . $post['feature_image'] . '" alt="' . $post['caption'] . '"></a>';
+                            echo '<a href="#"> <p>' . $post['caption'] . '</p> </a>';
+                            echo '<a href="#"><p><strong>Author:</strong> ' . $post['author'] . '</p> </a>';
+                            echo "</li>";
+                        }
+                    echo "</ul>";
+                    ?>
+                <!-- <ul>
                     <a href="#"><li><figure><img src="./images/homepage-images/F1.jpg"><figcaption>popular post1</figcaption></figure>one</li></a>
                     <a href="#"><li><figure><img src="./images/homepage-images/F2.jpg"><figcaption>popular post1</figcaption></figure>Two</li></a>
-                    <a href="#"><li><figure><img src="./images/homepage-images/F3.png"><figcaption>popular post1</figcaption></figure>Three</li></a>
-                    
-                </ul>
+                    <a href="#"><li><figure><img src="./images/homepage-images/F3.png"><figcaption>popular post1</figcaption></figure>Three</li></a>   
+                </ul> -->
             </div>
             <footer class="footer_section">
                 <section class="footer">

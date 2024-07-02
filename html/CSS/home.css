@@ -11,14 +11,6 @@
     
 
 }
-
-.head{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: auto;
-    /* background-color: rgb(154, 111, 54); */
-}
 .upperHeader{
     display: flex;
     justify-content: space-between;
@@ -34,6 +26,14 @@
 .left-part-upperHeader i{
     font-size:x-large;
 }
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(154, 111, 54); */
+}
+
 #logoImg {
     width: 4rem;
     border-radius: 50%;
@@ -43,6 +43,7 @@
     display: flex;
     align-items: center;
     gap:10px;
+    padding-left: 3.5rem;
     
 } 
 
@@ -118,6 +119,7 @@
     height: auto;
     gap:10px;
     cursor: pointer;
+   
     
 }
 .popularPost img{
@@ -126,7 +128,6 @@
 }
 .newPost li{
     list-style-type: none;
-   
 }
 .popularPost li{
     list-style-type: none;
