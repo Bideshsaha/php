@@ -29,6 +29,11 @@
     margin: 10px;
     
 }
+#signup-message{
+    color: green;
+    font-size: 24px;
+
+}
 /* .maincontainer{
     display:flexbox;
     position: absolute;
@@ -53,13 +58,8 @@
     max-width: 300px;
 } */
 
-#success-message{
-    display: none;
-    color: green;
-    font-size: 24px;
 
-}
-#error-message1{
+/* #error-message1{
     display: none;
     color: brown;
     font-size: 24px;
@@ -74,4 +74,4 @@
     color: brown;
     font-size: 24px;
 
-}
+} */

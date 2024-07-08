@@ -38,7 +38,7 @@
                         <li>Contact Us</li>
                         <li>About Us</li>
                        <li><a href="loginpage.php" target="_blank">login</a></li> 
-                        <li><a href="signuppage.html" target="_blank">Sign up</a></li>
+                        <li><a href="signuppage.php" target="_blank">Sign up</a></li>
                     </ul>
                 
                 </nav>
