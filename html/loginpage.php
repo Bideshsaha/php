@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
-<div id="message"><?php include 'login.php';?></div>
+<!-- <div id="message">include login here</div> -->
+<p id="success_message"></p>
+<p id="error_message"></p>
     <div class="wrapper">
-        <form  method="post">
+        <form id="loginform">
             <label>Email </label>
             <input type="email" name="email" placeholder="Enter your registered email" required>
             <label>Password </label>

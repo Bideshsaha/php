@@ -62,6 +62,7 @@
             <div class="popularPost">
                 <h3>Popular posts</h3>
                  <?php
+                 $arr=["capcicum_1","cheese_2"];
                     $popularPost = [
                         [
                             'feature_image' => './images/homepage-images/F1.jpg',
@@ -79,7 +80,15 @@
                             'author' => 'Author 1'
                         ],
 
-                    ]
+                    ];
+                    array_push(  $popularPost ,                      
+                        [
+                        'feature_image' => './images/homepage-images/F3.png',
+                        'caption' => 'This is the third post',
+                        'author' => 'Author 1'
+                        ]
+                    );
+                    array_pop($popularPost);
                 ?>
                     <?php 
                     echo "<ul>";

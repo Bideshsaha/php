@@ -21,4 +21,18 @@ $(document).ready(function(){
     var type = $('#psw').attr('type') === 'password' ? 'text' : 'password';
     $('#psw').attr('type', type);
     });
+
+    $("#loginform").submit(function(event){
+        console.log("insite submit working");
+        event.preventDefault();
+        $.ajax({
+            'url':"login.php",
+            'method':"POST",
+            'data':$("#loginform").serialize(),
+            'success':$("#success_message").text("ajax running"),
+            'error':$("#success_message").text("ajax not running"),
+        })
+    })
+
 });
+

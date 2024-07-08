@@ -1,4 +1,6 @@
 <?php
+print_r($_POST);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $Email = "sahabidesh523@gmail.com";
     $password = "123456789";
