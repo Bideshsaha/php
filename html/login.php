@@ -1,5 +1,5 @@
 <?php
-print_r($_POST);
+// print_r($_POST); if it was open then the passed data is displayed in the page
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $Email = "sahabidesh523@gmail.com";
@@ -17,6 +17,7 @@ if($email==$Email and $pass==$password){
 }else{
     echo 'please enter valid details';
 }
+
 }
 
 // // php array

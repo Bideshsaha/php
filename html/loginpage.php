@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
-<!-- <div id="message">include login here</div> -->
-<p id="success_message"></p>
-<p id="error_message"></p>
+<p id="message"></p>
+
+
     <div class="wrapper">
         <form id="loginform">
             <label>Email </label>
@@ -28,6 +28,7 @@
             </div>
             <input type="submit" name="login-btn" value="Submit">
             <p>New User ?<a href="signuppage.html">Sign up</a></p>
+           
         </form>  
     </div>
     

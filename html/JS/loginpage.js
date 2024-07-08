@@ -23,16 +23,23 @@ $(document).ready(function(){
     });
 
     $("#loginform").submit(function(event){
-        console.log("insite submit working");
+        console.log("inside submit working");
         event.preventDefault();
         $.ajax({
-            'url':"login.php",
-            'method':"POST",
-            'data':$("#loginform").serialize(),
-            'success':$("#success_message").text("ajax running"),
-            'error':$("#success_message").text("ajax not running"),
-        })
-    })
+            url: "login.php",
+            method: "POST",
+            data: $("#loginform").serialize(),
+            success: function(response) {
+                $("#message").text(response);
+            },
+            error: function(xhr, status, error) {
+                $("#message").text("An error occurred: " + error);
+            }
+        });
+    });
 
 });
 
+
+            // 'success':$("#message").text("Login successfully"),
+            // 'error':$("#message").text("please enter valid details"),
