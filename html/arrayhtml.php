@@ -6,7 +6,10 @@
     <title>array split</title>
 </head>
 <body>
-    
+    <?php include 'array.php';?>
     <script src="array.js"></script>
 </body>
 </html>
+
+
+

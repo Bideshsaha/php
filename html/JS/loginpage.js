@@ -29,7 +29,9 @@ $(document).ready(function(){
             url: "login.php",
             method: "POST",
             data: $("#loginform").serialize(),
+
             success: function(response) {
+                console.log(response);
                 $("#message").text(response);
             },
             error: function(xhr, status, error) {

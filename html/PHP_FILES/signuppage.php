@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="./JS/signuppage.js"></script>
+    <script src="../JS/signuppage.js"></script>
 
 </head>
-<body>
+<body class="body">
     
     <div class="pagecontainer">
     <!-- <div class="maincontainer"> -->

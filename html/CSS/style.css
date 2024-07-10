@@ -3,30 +3,39 @@
     padding:0;
     box-sizing: border-box;
 }
+.body{
+  
+    background-image: url("../images/signuup-background.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    
+}
 
 .pagecontainer{
-    /* display: flex;
-    justify-content: center; */
     display:flexbox; 
     flex-wrap: wrap;
-    
     text-align: center;
     border:1px solid black;
+    border-color: white;
     max-width: 350px;  
     margin: 0 auto;
-    margin-top: 20px;
-    /* position: absolute;
-    text-align: center;
-    justify-content: center; 
-    align-items: center; */  
+    margin-top: 20px; 
+    
+    
+}
+.pagecontainer , a{
+    color: white;
 }
 .pagecontainer>form {
     padding-top: 10px;
+    /* color: white; */
     
 }
 
 .pagecontainer>form>#btn1 ,#btn2 ,#btn3,#btn4{
     margin: 10px;
+    padding: 0 10px;
     
 }
 #signup-message{
@@ -56,10 +65,10 @@
     justify-content: center;
     gap: 10px;
     max-width: 300px;
-} */
+}
 
 
-/* #error-message1{
+#error-message1{
     display: none;
     color: brown;
     font-size: 24px;

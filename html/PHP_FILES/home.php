@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Home</title>
-    <link rel="stylesheet" href="./CSS/homE.css">
+    <link rel="stylesheet" href="../CSS/homE.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
             <header class="head" id="headid">
                 <div class="logo">
                     <figure>
-                        <img src="./images/homepage-images/package-logo_10250-1057.avif" alt="" id="logoImg">
+                        <img src="../images/homepage-images/package-logo_10250-1057.avif" alt="" id="logoImg">
                         <figcaption>Production Hub</figcaption>
                     </figure>
                 </div>
@@ -44,12 +44,12 @@
                 </nav>
             </header>
             <div class="imgSection">
-                <img src="./images/homepage-images/M.jpg" alt="" id="slideImg">
+                <img src="../images/homepage-images/M.jpg" alt="" id="slideImg">
             </div>
             <div class="newPost">
                 <h3>New posts</h3>
                 <ul>
-                    <a href="#"><img src="./images/homepage-images/blog image.jpg"></a>
+                    <a href="#"><img src="../images/homepage-images/blog image.jpg"></a>
                     <a href="#">
                         <p>The post on Instragram</p>
                         <p>14/06/2024</p>
@@ -65,17 +65,17 @@
                  $arr=["capcicum_1","cheese_2"];
                     $popularPost = [
                         [
-                            'feature_image' => './images/homepage-images/F1.jpg',
+                            'feature_image' => '../images/homepage-images/F1.jpg',
                             'caption' => 'This is the first post',
                             'author' => 'Author 1'
                         ],
                         [
-                            'feature_image' => './images/homepage-images/F2.jpg',
+                            'feature_image' => '../images/homepage-images/F2.jpg',
                             'caption' => 'This is the second post',
                             'author' => 'Author 1'
                         ],                        
                         [
-                            'feature_image' => './images/homepage-images/F3.png',
+                            'feature_image' => '../images/homepage-images/F3.png',
                             'caption' => 'This is the third post',
                             'author' => 'Author 1'
                         ],
@@ -83,7 +83,7 @@
                     ];
                     array_push(  $popularPost ,                      
                         [
-                        'feature_image' => './images/homepage-images/F3.png',
+                        'feature_image' => '../images/homepage-images/F3.png',
                         'caption' => 'This is the third post',
                         'author' => 'Author 1'
                         ]
