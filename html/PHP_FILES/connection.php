@@ -6,8 +6,6 @@ $password = "";
 $database = "blog";
 
 $conn = mysqli_connect($host,$user_name,$password,$database);
-// if(!$conn){
-//     echo 'connection is not done.';
-// }else{
-//     echo 'connection done sucessfully';
-// }
+if(!$conn){
+    echo 'connection is not done.';
+}

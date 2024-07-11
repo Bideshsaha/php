@@ -4,8 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $fName = $_POST["fn"];
     $lName = $_POST["ln"];
     $Email = $_POST["email"];
-
     $pass = $_POST["pwd"];
+    $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
     $len = strlen($pass);
     if($len<8){
         echo 'Please enter password atleast 8-10 charecter';
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             else{
                 echo 'Signed up successfully';
                 $query = mysqli_query($conn,"INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `cpassword`) 
-                VALUES ('$fName', '$lName', '$Email', '$pass', '')");
+                VALUES ('$fName', '$lName', '$Email', '$hashed_password', '')");
             }
         }
 
