@@ -1,37 +1,39 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+
 }
 .body{
-  
-    background-image: url("../images/signuup-background.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position:center;
-    
+    /* height: auto; */
+    overflow-y: hidden;
+    background: linear-gradient(#deb887, #9a6f36);
 }
 
 .pagecontainer{
-    display:flexbox; 
-    flex-wrap: wrap;
-    text-align: center;
-    border:1px solid black;
-    border-color: white;
-    max-width: 350px;  
-    margin: 0 auto;
-    margin-top: 20px; 
-    
-    
+    max-width: 350px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 3rem;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#9a6f36,#deb887); 
 }
-.pagecontainer , a{
-    color: white;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 20px;
 }
-.pagecontainer>form {
-    padding-top: 10px;
-    /* color: white; */
-    
+form input{
+    height: 1.6rem;
 }
+form input::placeholder{
+    font-size: 15px;
+}
+
 
 .pagecontainer>form>#btn1 ,#btn2 ,#btn3,#btn4{
     margin: 10px;

@@ -12,38 +12,27 @@
 <body class="body">
     
     <div class="pagecontainer">
-    <!-- <div class="maincontainer"> -->
+ 
         
         <p id="signup-message"></p>
-        <!-- <div id="success-message">Signed up successfully</div>
-        <div id="error-message1">Please enter password atleast 8-10 charecter</div>
-        <div id="error-message2">Not possible! please enter 8-10 charecter</div> -->
-
         <header id="heading">Signup</header>
         <form id="signupform">
-        <!-- <div class="container"> -->
+     
             
             <label>FirstName</label>
-            <input type="text" placeholder="Enter your Firstname" id="fn" name="fn" required><br><br>
-            <label>LastName</label>    
-            <input type="text" placeholder="Enter your Lastname" id="ln" name="ln"><br><br>
+            <input type="text" placeholder="Enter your Firstname" id="fn" name="fn" required>
+            <label>LastName</label>  
+            <input type="text" placeholder="Enter your Lastname" id="ln" name="ln">
             <label>Email Id</label>
-            <input type="email" placeholder="Enter your email here" id="email" name="email" required><br><br>
+            <input type="email" placeholder="Enter your email here" id="email" name="email" required>
             <label>Password</label>
-            <input type="password" placeholder="******" id="pwd" name="pwd" required><br><br>
+            <input type="password" placeholder="******" id="pwd" name="pwd" required>
+            <label>Confirm Password</label>
+            <input type="password" placeholder="******" id="cpwd" name="cpwd" required><br>
             <input type="submit" value="Submit" id="btn1" name="btn1">
-            <!-- <input type="button" value="Alert" id="btn2" onclick="myfunc()">
-            <input type="button" value="Prompt" id="btn3" onclick="myfunc1()">
-            <input type="button" value="confirm" id="btn4" onclick="myfunc2()"> -->
-
-        <!-- </div> -->
         <p>Already have a account ?<a href="loginpage.php">Login</a></p>
     </form>
-     <!-- <div class="display-sms"><p id="demo"></p></div>  -->
-    
-    <!-- <p id="demo2"></p> -->
-            
-<!-- </div> -->
+
 </div>
 </body>
 </html>
