@@ -13,7 +13,7 @@ $(document).ready(function(){
         console.log("inside submit working");
         event.preventDefault();
         $.ajax({
-            url: "login.php",
+            url: "login-action.php",
             method: "POST",
             data: $("#loginform").serialize(),
 

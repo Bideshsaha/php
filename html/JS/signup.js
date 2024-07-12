@@ -39,7 +39,7 @@ $(document).ready(function(){
         console.log("inside signupform");
         event.preventDefault();
         $.ajax({
-            url:"signup.php",
+            url:"signup-action.php",
             method: "POST",
             data: $("#signupform").serialize(),
             success: function(response) {
