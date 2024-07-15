@@ -1,4 +1,5 @@
 console.log("hi");
+
 // function myfunc(){
 //     alert("this is your first alert!");
 // }
@@ -34,7 +35,73 @@ console.log("hi");
 //     return false;
 // }
 
+
+//jquery codes for signup
 $(document).ready(function(){
+
+    function validatePassword() {
+        var password = $("#psw").val();
+        var validity = true;
+        if(password.length >= 8) {
+            $("#perror").removeClass("invalid").addClass("valid");
+        }else {
+            $("#perror").removeClass("valid").addClass("invalid");
+            validity = false;
+        }
+        if(password.match(/[a-z]/)) {
+            $("#perror").removeClass("invalid").addClass("valid");
+        }else {
+            $("#perror").removeClass("valid").addClass("invalid");
+            validity = false;
+        }
+        if(password.match(/[A-Z]/)) {
+            $("#perror").removeClass("invalid").addClass("valid");
+        }else {
+            $("#perror").removeClass("valid").addClass("invalid");
+            validity = false;
+        }
+        if(password.match(/[0-9]/)) {
+            $("#perror").removeClass("invalid").addClass("valid");
+        }else {
+            $("#perror").removeClass("valid").addClass("invalid");
+            validity= false;
+        }
+        if(password.match(/[!@#$%^&*]/)) {
+            $("#perror").removeClass("invalid").addClass("valid");
+        }else {
+            $("#perror").removeClass("valid").addClass("invalid");
+            validity = false;
+        }
+        if (validity) {
+            $("#perror").removeClass("invalid").addClass("valid").text("Password is valid");
+        } else {
+            $("#perror").removeClass("valid").addClass("invalid").text("Password is invalid");
+        }
+        return validity;
+    }
+    
+    $("#pwd").on("keyup", validatePassword);
+    
+    
+    $("#cpwd").on('keyup', function(){
+        var password = $("#pwd").val();
+        var confirm = $("#cpwd").val();
+        if(password != confirm){
+            $("#msg1").html("Passwords do not match!").css("color", "red");
+        }else{
+            $("#msg1").html("Passwords match.").css("color", "green");
+        }
+    });
+
+    //Eye for confirm password section
+    $("#open").hide();
+    $("#close,#open").click(function(){
+        $("#close, #open").toggle();
+    var type = $('#cpwd').attr('type') === 'password' ? 'text' : 'password';
+    $('#cpwd').attr('type', type);
+    });
+    //End of Eye section for confirm password 
+
     $('#signupform').submit(function(event){
         console.log("inside signupform");
         event.preventDefault();
@@ -42,6 +109,19 @@ $(document).ready(function(){
             url:"signup-action.php",
             method: "POST",
             data: $("#signupform").serialize(),
+            success: function(response) {
+                $("#signup-message").text(response);
+            },
+            error: function(xhr, status, error) {
+                $("#signup-message").text("An error occurred: " + error);
+            }
+        })
+    })
+    $('#email').on("blur",function(){
+        $.ajax({
+            url:"email-unique-action.php",
+            method:"POST",
+            data: {email: $("#email").val()},
             success: function(response) {
                 $("#signup-message").text(response);
             },

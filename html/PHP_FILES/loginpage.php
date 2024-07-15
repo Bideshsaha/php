@@ -17,17 +17,17 @@
     <div class="wrapper">
         <form id="loginform">
             <label>Email </label>
-            <input type="email" name="email" placeholder="Enter your registered email" required>
+            <input class="form-control" type="email" name="email" placeholder="Enter your registered email" required>
             <label>Password </label>
-            <div>
-                <input type="password" id="psw" name="psw" placeholder="*********" required>
-             
-                    <i id="close" class="fa-solid fa-eye-slash"></i>
-                    <i id="open" class="fa-solid fa-eye"></i>
- 
+            <div class="password-section">
+                <input class="form-control" type="password" id="psw" name="psw" placeholder="*********" required>
+             <div class="eye-section">
+                <i id="close" class="fa-solid fa-eye-slash"></i>
+                <i id="open" class="fa-solid fa-eye"></i>
+             </div>
             </div>
             <input type="submit" name="login-btn" value="Submit">
-            <p>New User ?<a href="signuppage.html">Sign up</a></p>
+            <p>New User ?<a href="signuppage.php">Sign up</a></p>
            
         </form>  
     </div>

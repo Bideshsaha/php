@@ -11,25 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $loginMessage = verifyLogin($email, $pass);
     echo $loginMessage;
-
-   
-
-// if($email==$Email and $pass==$password){
-//     echo 'Login successfully';
-// }else if($email==$Email and $pass!=$password){
-//     echo 'Invalid password';
-// }else if($email!=$Email and $pass==$password){
-//     echo 'invalid email id';
-// }else{
-//     echo 'please enter valid details';
-// }
 }
-
-
-
-// $Email = "sahabidesh523@gmail.com";
-// $password = "123456789";
-
 // Function to verify email and password
 function verifyLogin($email, $pass) {
     global $conn;
@@ -43,7 +25,7 @@ function verifyLogin($email, $pass) {
     
     // Bind result variables
     $stmt->bind_result($dbEmail, $hashed_password);
-    
+    echo $dbEmail;
     // Fetch the results
     if ($stmt->fetch()) {
         // Close statement

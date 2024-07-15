@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             else{
                 echo 'Signed up successfully';
-                $query = mysqli_query($conn,"INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `cpassword`) 
-                VALUES ('$fName', '$lName', '$Email', '$hashed_password', '')");
+                $query = mysqli_query($conn,"INSERT INTO `users` (`fname`, `lname`, `email`, `password`) 
+                VALUES ('$fName', '$lName', '$Email', '$hashed_password')");
             }
         }
 
