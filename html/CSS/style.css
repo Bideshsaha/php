@@ -6,7 +6,7 @@
 }
 .body{
     /* height: auto; */
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     background: linear-gradient(#deb887, #9a6f36);
 }
 
@@ -51,6 +51,7 @@ form input::placeholder{
 
 .cpassword-section{
     display: flex;
+    flex-direction: column;
     position: relative;
 }
 .eye-section{

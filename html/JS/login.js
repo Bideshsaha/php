@@ -28,7 +28,3 @@ $(document).ready(function(){
     });
 
 });
-
-
-            // 'success':$("#message").text("Login successfully"),
-            // 'error':$("#message").text("please enter valid details"),

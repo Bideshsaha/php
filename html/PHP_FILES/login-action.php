@@ -12,34 +12,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $loginMessage = verifyLogin($email, $pass);
     echo $loginMessage;
 }
-// Function to verify email and password
-function verifyLogin($email, $pass) {
+//New logic for login
+function verifyLogin($email, $pass){
     global $conn;
-    
-    // Prepare the SQL statement to prevent SQL injection
-    $stmt = $conn->prepare("SELECT email, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    
-    // Execute the statement
-    $stmt->execute();
-    
-    // Bind result variables
-    $stmt->bind_result($dbEmail, $hashed_password);
-    echo $dbEmail;
-    // Fetch the results
-    if ($stmt->fetch()) {
-        // Close statement
-        $stmt->close();
 
-        // Verify the password
-        if (password_verify($pass, $hashed_password)) {
-            return "Login successfully";
+        // Sanitize user input to prevent SQL Injection
+        $email = mysqli_real_escape_string($conn, $email);
+        $pass = mysqli_real_escape_string($conn, $pass);
+
+        // Query to check email and password
+        $sql = "SELECT password FROM users WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) == 0) {
+            $status = "Invalid email";
         } else {
-            return "Invalid password";
-        }
-    } else {
-        // Close statement
-        $stmt->close();
-        return "Invalid email id";
-    }
+            $row = mysqli_fetch_assoc($result);
+            $hashed_password = $row['password'];
+        
+            // Verify the entered password with the stored hashed password
+            if (password_verify($pass, $hashed_password)) {
+                $status = "Login successful";
+            } else {
+                $status = "Invalid password";
+            }
+        }      
+
+        // Close the connection
+        mysqli_close($conn);
+
+        // Return the status
+        echo $status;
 }
