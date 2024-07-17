@@ -16,6 +16,7 @@
  
         
         <p id="signup-message"></p>
+        <p id="email-message"></p>
         <header id="heading">Signup</header>
         <form id="signupform">
      

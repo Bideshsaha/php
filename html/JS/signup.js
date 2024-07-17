@@ -40,7 +40,7 @@ console.log("hi");
 $(document).ready(function(){
 
     function validatePassword() {
-        var password = $("#psw").val();
+        var password = $("#pwd").val();
         var validity = true;
         if(password.length >= 8) {
             $("#perror").removeClass("invalid").addClass("valid");
@@ -115,18 +115,19 @@ $(document).ready(function(){
             error: function(xhr, status, error) {
                 $("#signup-message").text("An error occurred: " + error);
             }
-        })
-    })
+        });
+    });
+
     $('#email').on("blur",function(){
         $.ajax({
             url:"email-unique-action.php",
             method:"POST",
             data: {email: $("#email").val()},
             success: function(response) {
-                $("#signup-message").text(response);
+                $("#email-message").text(response).css("color", "red",).css("font-size","24px");
             },
             error: function(xhr, status, error) {
-                $("#signup-message").text("An error occurred: " + error);
+                $("#email-message").text("An error occurred: " + error);
             }
         })
     })

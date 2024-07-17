@@ -47,11 +47,17 @@ form input::placeholder{
     position: absolute;
     right: 0;
 }
+.error-message {
+    color: red;
+}
+.success-message {
+    color: green;
+}
 /* form input[type="submit"]{
     width:fit-content;
     margin: 0 auto;
 } */
-#message{
+/* #message{
     display: flex;
     justify-content: center;  
-}
+} */

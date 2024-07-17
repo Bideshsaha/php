@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body class="body">
-<p id="message"></p>
-
+    
 
     <div class="wrapper">
         <form id="loginform">
+        <div id="message"></div>
             <label>Email </label>
-            <input class="form-control" type="email" name="email" placeholder="Enter your registered email" required>
-            <label>Password </label>
+            <input class="form-control" type="email" name="email" placeholder="Enter email" required>
+            <label>Password</label>
             <div class="password-section">
                 <input class="form-control" type="password" id="psw" name="psw" placeholder="*********" required>
              <div class="eye-section">

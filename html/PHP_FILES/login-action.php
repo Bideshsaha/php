@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $email = $_POST["email"];
     $pass = $_POST["psw"];
-
+    
     $loginMessage = verifyLogin($email, $pass);
     echo $loginMessage;
 }
@@ -25,16 +25,17 @@ function verifyLogin($email, $pass){
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 0) {
-            $status = "Invalid email";
+            
+            $status = '<span class="error-message">Invalid Email</span>';
         } else {
             $row = mysqli_fetch_assoc($result);
             $hashed_password = $row['password'];
         
             // Verify the entered password with the stored hashed password
             if (password_verify($pass, $hashed_password)) {
-                $status = "Login successful";
+                $status = '<span class="success-message">Login successful</span>';
             } else {
-                $status = "Invalid password";
+                $status = '<span class="error-message">Invalid password</span>';
             }
         }      
 
@@ -42,5 +43,5 @@ function verifyLogin($email, $pass){
         mysqli_close($conn);
 
         // Return the status
-        echo $status;
+        return $status;
 }

@@ -19,10 +19,10 @@ $(document).ready(function(){
 
             success: function(response) {
                 console.log(response);
-                $("#message").text(response);
+                $("#message").html(response);
             },
             error: function(xhr, status, error) {
-                $("#message").text("An error occurred: " + error);
+                $("#message").html("An error occurred: " + error);
             }
         });
     });
