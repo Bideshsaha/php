@@ -18,11 +18,19 @@ $(document).ready(function(){
             data: $("#loginform").serialize(),
 
             success: function(response) {
-                console.log(response);
-                $("#message").html(response);
+                //console.log(response);
+                let parseJson = JSON.parse(response);
+                // console.log(parseJson);
+                if(parseJson.status === 400){
+                    $("#message").html(parseJson.message).css("color","red");
+                }else{
+                    $("#message").html(parseJson.message).css("color","green");
+                    window.location.href="http://localhost/php/html/php_files/profile.php";
+                }
+                
             },
             error: function(xhr, status, error) {
-                $("#message").html("An error occurred: " + error);
+                $("#message").html("An error occurred: " + error).css("color","red");
             }
         });
     });

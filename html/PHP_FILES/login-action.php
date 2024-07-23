@@ -1,4 +1,5 @@
 <?php
+session_start();
 // print_r($_POST); if it was open then the passed data is displayed in the page
 include 'connection.php';
 
@@ -25,17 +26,26 @@ function verifyLogin($email, $pass){
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 0) {
-            
-            $status = '<span class="error-message">Invalid Email</span>';
+            $response = [
+                'status'=> 400,
+                'message'=>"Invalid email"  
+            ];
         } else {
             $row = mysqli_fetch_assoc($result);
             $hashed_password = $row['password'];
-        
             // Verify the entered password with the stored hashed password
             if (password_verify($pass, $hashed_password)) {
-                $status = '<span class="success-message">Login successful</span>';
+                $response = [
+                    'status'=>200,
+                    'message'=>'Login successful'
+                ];
+                $_SESSION["email"] = $email;
+                // header("location:profile.php");
             } else {
-                $status = '<span class="error-message">Invalid password</span>';
+                $response = [
+                    'status'=>400,
+                    'message'=>'Invalid password'
+                ];
             }
         }      
 
@@ -43,5 +53,8 @@ function verifyLogin($email, $pass){
         mysqli_close($conn);
 
         // Return the status
-        return $status;
+        return json_encode($response);
 }
+// $status = '<span class="error-message">Invalid Email</span>';
+// $status = '<span class="success-message">Login successful</span>';
+//$status = '<span class="error-message">Invalid password</span>';
