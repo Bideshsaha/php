@@ -6,14 +6,26 @@ if(!isset($_SESSION["email"])){
 }
 // echo 'profile page';
 $email = $_SESSION["email"];
+
+                                                      //Data fetching from user table
 $query = "SELECT fname ,lname,email FROM users WHERE email = '$email'";
 $result = mysqli_query($conn,$query);
 if($result){
     $row = mysqli_fetch_assoc($result);
-    // print_r($row);
-    //echo 'Welcome, '.$row['fname'].' '.$row['lname'];
-
 }
+
+                                                      //Data fetching from profile table
+$query = "SELECT ID FROM users WHERE email = '$email'";
+$userid = mysqli_query($conn,$query);
+$user_id = mysqli_fetch_assoc($userid);
+$query2 = "SELECT datemax, phone, address,city,state FROM profile WHERE user_id = '".$user_id["ID"]."'";
+$result2 = mysqli_query($conn,$query2);
+if($result2){
+    $row2 = mysqli_fetch_assoc($result2);
+}
+// echo '<pre>';
+// print_r($row2);
+// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +47,9 @@ if($result){
             
             <div class="image-part" id="image-part">
                     <label for="profile_pic">Upload Profile Picture</label>
-                    <div><img class="profile-image" src="../images/image-removebg-preview.png"></div>
+                    <div><img class="profile-image" src="../images/profile-svgrepo-com.svg"></div>
                     <input type="file" name="profile_pic" id="profile_pic" required>
-                    <input type="submit" value="Upload" class="upload" id="upload">
+                    <!-- <input type="submit" value="Upload" class="upload" id="upload"> -->
             </div>
             
            <div class="info-part" id="info-part">
@@ -55,31 +67,53 @@ if($result){
                 </div>
                 <div class="oneline">
                     <label for="datemax">D.O.B</label>
-                    <input type="date" class="form-control start" id="datemax" name="datemax" max="2014-12-31" required>
+                     <?php if(!isset($row2['datemax'])){
+                        echo '<input type="date" class="form-control start" id="datemax" name="datemax" max="2014-12-31" required>';
+                     }else{
+                        echo '<div class="start">'.$row2['datemax'].'</div>';
+                     }
+                    ?>
                 </div>
                 <div class="oneline">
                     <label for="phone">Contact No</label>
-                    <input type="tel" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="[0-9]{10}" required>
+                    <?php if(!isset($row2['phone'])){
+                        echo '<input type="tel" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="[0-9]{10}" required>';
+                     }else{
+                        echo '<div class="start">'.$row2['phone'].'</div>';
+                     }
+                    ?> 
                 </div>
                 <div class="oneline">
                     <label for="address">Address</label>
-                    <textarea class="form-control start" id="address" name="address" required></textarea>
+                    <?php if(!isset($row2['address'])){
+                        echo '<textarea class="form-control start" id="address" name="address" required></textarea>';
+                     }else{
+                        echo '<div class="start">'.$row2['address'].'</div>';
+                     }
+                    ?>   
                 </div>
                 <div class="oneline">
                     <label for="city">City</label>
-                    <select class="form-control start" id="city" name="city" required>
+                    <?php if(!isset($row2['city'])){
+                        echo '<select class="form-control start" id="city" name="city" required>
                         <option value="" disabled selected>Select a city</option>
                         <option value="Kolkata">Kolkata</option>
                         <option value="Bangalore">Bangalore</option>
                         <option value="Indore">Indore</option>
                         <option value="Hyderabad">Hyderabad</option>
                         <!-- Add more options as needed -->
-                    </select>
+                        </select>';
+                     }else{
+                        echo '<div class="start">'.$row2['city'].'</div>';
+                     }
+                    ?> 
+
                 </div>
 
                 <div class="oneline">
                     <label for="state">State</label>
-                    <select class="form-control start" id="state" name="state" required>
+                    <?php if(!isset($row2['state'])){
+                echo '<select class="form-control start" id="state" name="state" required>
                     <option value="" disabled selected>Select your state</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -109,11 +143,16 @@ if($result){
                     <option value="Uttar Pradesh">Uttar Pradesh</option>
                     <option value="Uttarakhand">Uttarakhand</option>
                     <option value="West Bengal">West Bengal</option>
-                    </select>
+                    </select>';
+                     }else{
+                        echo '<div class="start">'.$row2['state'].'</div>';
+                     }
+                    ?>
+                    
                 </div>
                 <input type="submit" value="Save">
             </div>
-            
+           
         </form>
     </div>
 </body>
