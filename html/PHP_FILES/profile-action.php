@@ -64,7 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   VALUES ('".$user_id["ID"]."', '".$profilePicturePath."', '".$dob."', '".$contact."', '".$address."', '".$city."', '".$state."')";
 
         if (mysqli_query($conn, $query)) {
-            echo "Profile updated successfully.";
+            header("location:home.php");
+            // echo "Profile updated successfully.";
         } else {
             echo "Error: Could not execute the query. " . mysqli_error($conn);
         }

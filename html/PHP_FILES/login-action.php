@@ -55,6 +55,3 @@ function verifyLogin($email, $pass){
         // Return the status
         return json_encode($response);
 }
-// $status = '<span class="error-message">Invalid Email</span>';
-// $status = '<span class="success-message">Login successful</span>';
-//$status = '<span class="error-message">Invalid password</span>';

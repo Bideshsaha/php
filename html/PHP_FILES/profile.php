@@ -18,7 +18,7 @@ if($result){
 $query = "SELECT ID FROM users WHERE email = '$email'";
 $userid = mysqli_query($conn,$query);
 $user_id = mysqli_fetch_assoc($userid);
-$query2 = "SELECT datemax, phone, address,city,state FROM profile WHERE user_id = '".$user_id["ID"]."'";
+$query2 = "SELECT profile_pic,datemax, phone, address,city,state FROM profile WHERE user_id = '".$user_id["ID"]."'";
 $result2 = mysqli_query($conn,$query2);
 if($result2){
     $row2 = mysqli_fetch_assoc($result2);
@@ -33,6 +33,7 @@ if($result2){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/profile.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>profile</title>
 </head>
 <body>
@@ -44,14 +45,18 @@ if($result2){
         
         <!-- Profile form -->
         <form action="profile-action.php" method="post" enctype="multipart/form-data" class="profileform" id="profileform">
-            
-            <div class="image-part" id="image-part">
-                    <label for="profile_pic">Upload Profile Picture</label>
-                    <div><img class="profile-image" src="../images/profile-svgrepo-com.svg"></div>
-                    <input type="file" name="profile_pic" id="profile_pic" required>
-                    <!-- <input type="submit" value="Upload" class="upload" id="upload"> -->
+        <!-- profile-image-section -->
+        <div class="image-part" id="image-part">
+            <label for="profile_pic">Upload Profile Picture</label>
+            <?php if(!isset($row2['profile_pic'])){
+                        echo '<input type="file" name="profile_pic" id="profile_pic" style="display: none;" required>
+                        <div class="profile-image" id="profile-image"><img src="" alt="" id="profile-img"></div>';
+                     }else{
+                        echo '<div class="profile-image" id="profile-image"><img src="../uploads/'.$row2["profile_pic"].'" alt="" id="profile-img"></div>';
+                     }
+                    ?>
             </div>
-            
+            <!-- profile-info-section -->
            <div class="info-part" id="info-part">
                 <div class="oneline">
                     <label for="fname">First Name</label>
@@ -74,15 +79,17 @@ if($result2){
                      }
                     ?>
                 </div>
+                <!-- contact-info -->
                 <div class="oneline">
                     <label for="phone">Contact No</label>
                     <?php if(!isset($row2['phone'])){
-                        echo '<input type="tel" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="[0-9]{10}" required>';
+                        echo '<input type="tel" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="\d{10}" required>';
                      }else{
-                        echo '<div class="start">'.$row2['phone'].'</div>';
+                        echo '<div class="start">'.htmlspecialchars($row2['phone']).'</div>';
                      }
                     ?> 
                 </div>
+                <!-- Address-part -->
                 <div class="oneline">
                     <label for="address">Address</label>
                     <?php if(!isset($row2['address'])){
@@ -92,6 +99,7 @@ if($result2){
                      }
                     ?>   
                 </div>
+                <!-- city-section -->
                 <div class="oneline">
                     <label for="city">City</label>
                     <?php if(!isset($row2['city'])){
@@ -109,7 +117,7 @@ if($result2){
                     ?> 
 
                 </div>
-
+                <!-- state-section -->
                 <div class="oneline">
                     <label for="state">State</label>
                     <?php if(!isset($row2['state'])){
@@ -155,5 +163,6 @@ if($result2){
            
         </form>
     </div>
+    <script src="../JS/profile.js"></script>
 </body>
 </html>
