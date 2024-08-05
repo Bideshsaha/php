@@ -11,6 +11,17 @@
     
 
 }
+.profile{
+    background-image: url("../images/profile-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
 .upperHeader{
     display: flex;
     justify-content: space-between;
@@ -78,6 +89,52 @@
     height: 100%;
    
 }
+/* image_upload section */
+.upload_blog {
+    max-width: 800px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    gap:1rem;
+}
+.upload_blog p {
+    font-size: 50px;
+    color:rgb(154, 111, 54);
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn-pink {
+    background-color: #e84949;
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-pink::before {
+    content: "";
+    position: absolute;
+    background-color: #1f1f1f;
+    top: 0;
+    left : 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+  }
+  .btn-pink:hover::before {
+    transform: scaleX(1);
+  }
 .newPost{
     display: inline-flex; 
     /* justify-content: right; */

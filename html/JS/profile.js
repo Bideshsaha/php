@@ -1,5 +1,6 @@
 
-//jquery image upload section 
+{/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> */}
 $(document).ready(function() {
     $('#profile-image').on('click', function() {
         $('#profile_pic').click();
@@ -14,5 +15,34 @@ $(document).ready(function() {
             };
             reader.readAsDataURL(file);
         }
+    });
+    // $("#edit").hide();
+    $('#profileform').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        console.log("Form :", formData);
+
+        $.ajax({
+            url: 'profile-action.php',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log("Response :", response)
+                if (response.success) {
+                    // $("#save").hide();
+                    window.location.reload();
+                    // Give the DOM some time to update
+                    // setTimeout(function() {
+                    //     window.location.reload();
+                    // }, 100); // 100 milliseconds delay
+                    // $("#edit").show();
+                    // window.location.href = 'home.php';
+                } else {
+                    $('#error-message').html(response.message).css("color", "#9e291c",).css("font-size","24px");
+                }
+            }
+        });
     });
 });

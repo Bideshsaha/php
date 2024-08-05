@@ -23,6 +23,7 @@ $result2 = mysqli_query($conn,$query2);
 if($result2){
     $row2 = mysqli_fetch_assoc($result2);
 }
+
 // echo '<pre>';
 // print_r($row2);
 // echo '</pre>';
@@ -44,18 +45,19 @@ if($result2){
         </form>
         
         <!-- Profile form -->
-        <form action="profile-action.php" method="post" enctype="multipart/form-data" class="profileform" id="profileform">
+        <form  method="post" enctype="multipart/form-data" class="profileform" id="profileform">
         <!-- profile-image-section -->
         <div class="image-part" id="image-part">
             <label for="profile_pic">Upload Profile Picture</label>
+            <span id="error-message"></span>
             <?php if(!isset($row2['profile_pic'])){
                         echo '<input type="file" name="profile_pic" id="profile_pic" style="display: none;" required>
                         <div class="profile-image" id="profile-image"><img src="" alt="" id="profile-img"></div>';
                      }else{
                         echo '<div class="profile-image" id="profile-image"><img src="../uploads/'.$row2["profile_pic"].'" alt="" id="profile-img"></div>';
                      }
-                    ?>
-            </div>
+            ?>
+        </div>
             <!-- profile-info-section -->
            <div class="info-part" id="info-part">
                 <div class="oneline">
@@ -83,9 +85,9 @@ if($result2){
                 <div class="oneline">
                     <label for="phone">Contact No</label>
                     <?php if(!isset($row2['phone'])){
-                        echo '<input type="tel" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="\d{10}" required>';
+                        echo '<input type="text" class="form-control start" id="phone" name="phone" placeholder="123-4545-678" pattern="\d{10}" required>';
                      }else{
-                        echo '<div class="start">'.htmlspecialchars($row2['phone']).'</div>';
+                        echo '<div class="start">'.$row2['phone'].'</div>';
                      }
                     ?> 
                 </div>
@@ -158,7 +160,17 @@ if($result2){
                     ?>
                     
                 </div>
-                <input type="submit" value="Save">
+
+                
+                <?php if(!isset($row2)){
+                        echo '<input type="submit" value="Save" id="save" name="save">';
+                     }else{
+                        // edit button added 
+                        echo ' <input type="submit" value="Edit" id="edit" name="edit">';
+                     }
+                    ?>  
+
+                <a href="home.php">Goto Home</a>
             </div>
            
         </form>

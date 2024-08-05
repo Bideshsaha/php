@@ -1,3 +1,29 @@
+<?php
+ session_start();
+include 'connection.php';
+if(isset($_SESSION["email"])){
+
+
+$email = $_SESSION["email"];
+//Data fetching from user table
+$query = "SELECT fname ,lname,email FROM users WHERE email = '$email'";
+$result = mysqli_query($conn,$query);
+if($result){
+    $row = mysqli_fetch_assoc($result);
+}
+                                                      
+
+$query = "SELECT ID FROM users WHERE email = '$email'";
+$userid = mysqli_query($conn,$query);
+$user_id = mysqli_fetch_assoc($userid);
+$query2 = "SELECT profile_pic,phone FROM profile WHERE user_id = '".$user_id["ID"]."'";
+$result2 = mysqli_query($conn,$query2);
+if($result2){
+    $row2 = mysqli_fetch_assoc($result2);
+} 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +47,13 @@
                     <i><i class="fa-brands fa-youtube"></i></i>
                 </div>
                 <div class="right-part-upperHeader">
-                    <p>sahabidesh523@gmail.com | 7003193887</p>
+                    <?php 
+                    if(isset($row["email"]) && isset($row2["phone"])){
+                        echo '<P>'.$row['email'].' | '.$row2['phone'].'</P>';
+                    }else{
+                        echo'<p>production123@gmail.com | 9411225965</p>';
+                    }
+                    ?>
                 </div>
             </div>
             <header class="head" id="headid">
@@ -37,15 +69,56 @@
                         <li>Blog</li>
                         <li>Contact Us</li>
                         <li>About Us</li>
-                       <li><a href="loginpage.php" target="_blank">login</a></li> 
-                        <li><a href="signuppage.php" target="_blank">Sign up</a></li>
+
+                        <!-- <li><a href="loginpage.php">login</a></li> 
+                        <li><a href="signuppage.php">Sign up</a></li> -->
+
+                        <?php  
+                        //working
+                        if(!isset($row) && !isset($row2['profile_pic'])){
+                            echo'<li><a href="loginpage.php">login</a></li>';
+                            echo'<li><a href="signuppage.php">Sign up</a></li>';
+                            echo '<li><img class="profile" alt="" src=""></li>';
+                        }else if(isset($row) && !isset($row2['profile_pic'])){
+                            echo '<li>Welcome '.$row["fname"].' '.$row["lname"].'</li>';
+                            echo '<li><a href="profile.php"><img class="profile" alt="" src=""></a></li>';
+                        }else if(isset($row) && isset($row2['profile_pic'])){
+                            echo '<li>Welcome '.$row["fname"].' '.$row["lname"].'</li>';
+                            echo '<li><a href="profile.php"><img class="profile" alt="" src="../uploads/'.$row2["profile_pic"].'"></a></li>';
+
+                        }
+
+                        //if(!isset($row)){
+                        //echo'<li><a href="loginpage.php">login</a></li>';
+                        //echo'<li><a href="signuppage.php">Sign up</a></li>';
+                        //}else{    
+                        //echo 'Welcome '.$row["fname"].' '.$row["lname"];
+                        //}
+                        ////working
+                        //if(!isset($row2['profile_pic'])){
+                        //echo '<img class="profile" alt="" src="">';
+                        //}else{    
+                        //echo '<a href="profile.php"><img class="profile" alt="" src="../uploads/'.$row2["profile_pic"].'"></a>';
+                        //}
+                        ?>
                     </ul>
-                
+                    
                 </nav>
+                
             </header>
             <div class="imgSection">
                 <img src="../images/homepage-images/M.jpg" alt="" id="slideImg">
             </div>
+            <!-- working for create post template -->
+            <div class="upload_blog" id="upload_blog">
+                <p>Upload Your Blog To Our Website</p>
+                <a href="blog-upload.php"><button type="submit" name="upload_button" class="btn-pink" id="btn-top">Upload</button></a>
+            </div>
+
+
+
+
+            <!-- working for create post template -->
             <div class="newPost">
                 <h3>New posts</h3>
                 <ul>

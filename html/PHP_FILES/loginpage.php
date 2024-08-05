@@ -28,7 +28,7 @@
             </div>
             <input type="submit" name="login-btn" value="Submit">
             <p>New User ?<a href="signuppage.php">Sign up</a></p>
-           
+            <a href="home.php">Goto Home</a>
         </form>  
     </div>
     
