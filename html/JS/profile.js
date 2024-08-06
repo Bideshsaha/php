@@ -31,14 +31,7 @@ $(document).ready(function() {
             success: function(response) {
                 console.log("Response :", response)
                 if (response.success) {
-                    // $("#save").hide();
                     window.location.reload();
-                    // Give the DOM some time to update
-                    // setTimeout(function() {
-                    //     window.location.reload();
-                    // }, 100); // 100 milliseconds delay
-                    // $("#edit").show();
-                    // window.location.href = 'home.php';
                 } else {
                     $('#error-message').html(response.message).css("color", "#9e291c",).css("font-size","24px");
                 }

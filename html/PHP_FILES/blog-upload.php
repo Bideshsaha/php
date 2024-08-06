@@ -18,9 +18,10 @@ if(!isset($_SESSION["email"])){
     <h1>Upload Blog</h1>
     <div class="blog-page">
         <form class="blog-form" id="blog-form">
+        <span id="error-message"></span>
                 <div class="blog-image">
                     <!-- <label for="profile_pic">Featured Image</label> -->
-                    <span id="error-message"></span>
+                    <!-- <span id="error-message"></span> -->
                     <input type="file" name="fetured_pic" id="fetured_pic" required>
                     <div id="fetured-image"><img src="" id="fetured-img" ></div>
                 </div>

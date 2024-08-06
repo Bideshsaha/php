@@ -23,6 +23,14 @@ if($result2){
 } 
 }
 ?>
+<?php 
+        $query2 = "SELECT fetured_image, blogs, created_at FROM blogsotrage ORDER BY RAND() LIMIT 3";
+        $result2 = mysqli_query($conn, $query2);
+        
+        if ($result2) {
+            $rowall = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+        }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +46,6 @@ if($result2){
 </head>
 <body>
     <div id="wrapper">
-        <!-- <div class="conatiner"> -->
             <div class="upperHeader">
                 <div class="left-part-upperHeader">
                     <i><i class="fa-brands fa-facebook"></i></i>
@@ -83,23 +90,11 @@ if($result2){
                             echo '<li>Welcome '.$row["fname"].' '.$row["lname"].'</li>';
                             echo '<li><a href="profile.php"><img class="profile" alt="" src=""></a></li>';
                         }else if(isset($row) && isset($row2['profile_pic'])){
+                            echo '<li><a href="my-blogs.php">My Blogs</a></li>';
                             echo '<li>Welcome '.$row["fname"].' '.$row["lname"].'</li>';
                             echo '<li><a href="profile.php"><img class="profile" alt="" src="../uploads/'.$row2["profile_pic"].'"></a></li>';
 
                         }
-
-                        //if(!isset($row)){
-                        //echo'<li><a href="loginpage.php">login</a></li>';
-                        //echo'<li><a href="signuppage.php">Sign up</a></li>';
-                        //}else{    
-                        //echo 'Welcome '.$row["fname"].' '.$row["lname"];
-                        //}
-                        ////working
-                        //if(!isset($row2['profile_pic'])){
-                        //echo '<img class="profile" alt="" src="">';
-                        //}else{    
-                        //echo '<a href="profile.php"><img class="profile" alt="" src="../uploads/'.$row2["profile_pic"].'"></a>';
-                        //}
                         ?>
                     </ul>
                     
@@ -136,49 +131,46 @@ if($result2){
                 <h3>Popular posts</h3>
                  <?php
                  $arr=["capcicum_1","cheese_2"];
-                    $popularPost = [
-                        [
-                            'feature_image' => '../images/homepage-images/F1.jpg',
-                            'caption' => 'This is the first post',
-                            'author' => 'Author 1'
-                        ],
-                        [
-                            'feature_image' => '../images/homepage-images/F2.jpg',
-                            'caption' => 'This is the second post',
-                            'author' => 'Author 1'
-                        ],                        
-                        [
-                            'feature_image' => '../images/homepage-images/F3.png',
-                            'caption' => 'This is the third post',
-                            'author' => 'Author 1'
-                        ],
+                    // $popularPost = [
+                    //     [
+                    //         'feature_image' => '../images/homepage-images/F1.jpg',
+                    //         'caption' => 'This is the first post',
+                    //         'author' => 'Author 1'
+                    //     ],
+                    //     [
+                    //         'feature_image' => '../images/homepage-images/F2.jpg',
+                    //         'caption' => 'This is the second post',
+                    //         'author' => 'Author 1'
+                    //     ],                        
+                    //     [
+                    //         'feature_image' => '../images/homepage-images/F3.png',
+                    //         'caption' => 'This is the third post',
+                    //         'author' => 'Author 1'
+                    //     ],
 
-                    ];
-                    array_push(  $popularPost ,                      
-                        [
-                        'feature_image' => '../images/homepage-images/F3.png',
-                        'caption' => 'This is the third post',
-                        'author' => 'Author 1'
-                        ]
-                    );
-                    array_pop($popularPost);
+                    // ];
+                    // array_push(  $popularPost ,                      
+                    //     [
+                    //     'feature_image' => '../images/homepage-images/F3.png',
+                    //     'caption' => 'This is the third post',
+                    //     'author' => 'Author 1'
+                    //     ]
+                    // );
+                    // array_pop($popularPost);
                 ?>
                     <?php 
                     echo "<ul>";
-                        foreach($popularPost as $post){
+                        foreach($rowall as $oneof){
                             echo "<li>";
-                            echo '<a href="#"> <img src="' . $post['feature_image'] . '" alt="' . $post['caption'] . '"></a>';
-                            echo '<a href="#"> <p>' . $post['caption'] . '</p> </a>';
-                            echo '<a href="#"><p><strong>Author:</strong> ' . $post['author'] . '</p> </a>';
+                            echo '<a href="#"><img src="../FeatureImage/'.$oneof["fetured_image"].'" alt=""></a>';
+                            // echo '<p> ' . $row['fname'] . '</p>';
+                            echo '<a href="#"><p>' . $oneof['blogs'] . '</p> </a>';
+                            echo '<a href="#"><p>' . $oneof['created_at'] . '</p> </a>';
                             echo "</li>";
                         }
                     echo "</ul>";
                     ?>
-                <!-- <ul>
-                    <a href="#"><li><figure><img src="./images/homepage-images/F1.jpg"><figcaption>popular post1</figcaption></figure>one</li></a>
-                    <a href="#"><li><figure><img src="./images/homepage-images/F2.jpg"><figcaption>popular post1</figcaption></figure>Two</li></a>
-                    <a href="#"><li><figure><img src="./images/homepage-images/F3.png"><figcaption>popular post1</figcaption></figure>Three</li></a>   
-                </ul> -->
+
             </div>
             <footer class="footer_section">
                 <section class="footer">
@@ -199,7 +191,6 @@ if($result2){
                     <span>@copyright:Bidesh saha 2024 june 4</span> 
                 </section>
             </footer>
-        <!-- </div> -->
     </div>
 </body>
 </html>

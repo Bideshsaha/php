@@ -32,7 +32,12 @@ $(document).ready(function() {
             processData: false,
             success: function(response) {
                 // Handle the response from the server
-                alert('Blog uploaded successfully');
+                // alert('Blog uploaded successfully');
+                if (response.success) {
+                    window.location.reload();
+                } else {
+                    $('#error-message').html(response.message).css("color", "#9e291c",).css("font-size","24px");
+                }
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 // Handle errors here
