@@ -24,7 +24,7 @@ if($result2){
 }
 ?>
 <?php 
-        $query2 = "SELECT fetured_image, blogs, created_at FROM blogsotrage ORDER BY RAND() LIMIT 3";
+        $query2 = "SELECT fname,lname,fetured_image, blogs, created_at FROM blogsotrage ORDER BY RAND() LIMIT 3";
         $result2 = mysqli_query($conn, $query2);
         
         if ($result2) {
@@ -123,14 +123,51 @@ if($result2){
                         <p>14/06/2024</p>
                         <p>Bidesh</p>
                     </a>
-
                 </ul>
-
             </div>
             <div class="popularPost">
                 <h3>Popular posts</h3>
-                 <?php
-                 $arr=["capcicum_1","cheese_2"];
+                    <?php 
+                    //echo "<ul>";
+                        foreach($rowall as $oneof){
+                            //echo "<li>";
+                            echo '<a href="#"><img src="../FeatureImage/'.$oneof["fetured_image"].'" alt=""></a>';
+                            echo '<div class="post-details">';
+                                echo '<p> '.$oneof['fname'].'</p>';
+                                // echo '<p>'.$oneof['blogs'].'</p>';
+                                echo '<p>'.$oneof['created_at'].'</p>';
+                            echo '</div>';
+                            //echo "</li>";
+                        }
+                    //echo "</ul>";
+                    ?>
+            </div>
+            <footer class="footer_section">
+                <section class="footer">
+                    <div class="footer_part">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                    <div class="footer_part">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                    <div class="footer_part">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                    <div class="footer_part">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    </div>
+                </section>
+                <section class="belowfooter">
+                    <span>@copyright:Bidesh saha 2024 june 4</span> 
+                </section>
+            </footer>
+    </div>
+</body>
+</html>
+
+
+<?php
+                 //$arr=["capcicum_1","cheese_2"];
                     // $popularPost = [
                     //     [
                     //         'feature_image' => '../images/homepage-images/F1.jpg',
@@ -158,39 +195,3 @@ if($result2){
                     // );
                     // array_pop($popularPost);
                 ?>
-                    <?php 
-                    echo "<ul>";
-                        foreach($rowall as $oneof){
-                            echo "<li>";
-                            echo '<a href="#"><img src="../FeatureImage/'.$oneof["fetured_image"].'" alt=""></a>';
-                            // echo '<p> ' . $row['fname'] . '</p>';
-                            echo '<a href="#"><p>' . $oneof['blogs'] . '</p> </a>';
-                            echo '<a href="#"><p>' . $oneof['created_at'] . '</p> </a>';
-                            echo "</li>";
-                        }
-                    echo "</ul>";
-                    ?>
-
-            </div>
-            <footer class="footer_section">
-                <section class="footer">
-                    <div class="footer_part">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                    <div class="footer_part">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                    <div class="footer_part">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                    <div class="footer_part">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    </div>
-                </section>
-                <section class="belowfooter">
-                    <span>@copyright:Bidesh saha 2024 june 4</span> 
-                </section>
-            </footer>
-    </div>
-</body>
-</html>

@@ -78,8 +78,6 @@
     cursor: pointer;
 
 }
-
-
 .imgSection{
     width: 100%;
     height: 75vh;
@@ -163,6 +161,9 @@
     color: rgb(154, 111, 54);
     
 }
+.newPost li{
+    list-style-type: none;
+}
 
 .popularPost{
     display: inline-flex;
@@ -183,12 +184,14 @@
     width: 18rem;
     height: 10rem;
 }
-.newPost li{
-    list-style-type: none;
+.post-details{
+    display: flex;
+    gap:1rem;
 }
-.popularPost li{
+
+/* .popularPost li{
     list-style-type: none;
-}
+} */
 .footer_section{
     
     width:100%;

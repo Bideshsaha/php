@@ -51,16 +51,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($isValid) {
         // Fetch user ID from the users table
         $email = $_SESSION["email"];
-        $query = "SELECT ID FROM users WHERE email = '$email'";
+        $query = "SELECT ID,fname,lname FROM users WHERE email = '$email'";
         $result = mysqli_query($conn, $query);
         $user_id = mysqli_fetch_assoc($result);
-
+        
         // Prepare data for insertion
         $content = $_POST["textarea"];
 
         // Insert data into profile table
-        $query = "INSERT INTO `blogsotrage` (`user_id`, `fetured_image`, `blogs`) 
-                  VALUES ('".$user_id["ID"]."', '".$profilePicturePath."', '".$content."')";
+        $query = "INSERT INTO `blogsotrage` (`user_id`,`fname`,`lname`,`fetured_image`,`blogs`) 
+                  VALUES ('".$user_id["ID"]."','".$user_id["fname"]."','".$user_id["lname"]."', '".$profilePicturePath."', '".$content."')";
 
         if (mysqli_query($conn, $query)) {
             $response['success'] = true;
