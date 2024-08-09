@@ -38,25 +38,25 @@ if($result2){
     <title>profile</title>
 </head>
 <body>
-<div class="form-container">
+<div class="form-container"> 
         <!-- Logout form -->
         <form action="logout.php" method="get" class="logoutform" id="logoutform">
             <input type="submit" value="Logout">
-        </form>
+        </form> 
         
         <!-- Profile form -->
-        <form  method="post" enctype="multipart/form-data" class="profileform" id="profileform">
+         <form  method="post" enctype="multipart/form-data" class="profileform" id="profileform"> 
         <!-- profile-image-section -->
-        <div class="image-part" id="image-part">
+         <div class="image-part" id="image-part">
             <label for="profile_pic">Upload Profile Picture</label>
             <span id="error-message"></span>
-            <?php if(!isset($row2['profile_pic'])){
+             <?php if(!isset($row2['profile_pic'])){
                         echo '<input type="file" name="profile_pic" id="profile_pic" style="display: none;" required>
                         <div class="profile-image" id="profile-image"><img src="" alt="" id="profile-img"></div>';
                      }else{
                         echo '<div class="profile-image" id="profile-image"><img src="../uploads/'.$row2["profile_pic"].'" alt="" id="profile-img"></div>';
                      }
-            ?>
+            ?> 
         </div>
             <!-- profile-info-section -->
            <div class="info-part" id="info-part">
@@ -159,16 +159,16 @@ if($result2){
                      }
                     ?>
                     
-                </div>
+                 </div>
 
-                
+ 
                 <?php if(!isset($row2)){
                         echo '<input type="submit" value="Save" id="save" name="save">';
                      }else{
-                        // edit button added 
+                        //  edit button added 
                         echo ' <input type="submit" value="Edit" id="edit" name="edit">';
                      }
-                    ?>  
+                    ?>   
 
                 <a href="home.php">Goto Home</a>
             </div>

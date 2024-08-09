@@ -24,6 +24,14 @@ if($result2){
 }
 ?>
 <?php 
+        $querynewpost = "SELECT fname, lname, fetured_image, blogs, created_at FROM blogsotrage ORDER BY created_at DESC LIMIT 1";
+        $resultnewpost = mysqli_query($conn, $querynewpost);
+
+        if ($resultnewpost) {
+        $rownewpost = mysqli_fetch_assoc($resultnewpost); // Use mysqli_fetch_assoc for a single row
+        }
+
+
         $query2 = "SELECT fname,lname,fetured_image, blogs, created_at FROM blogsotrage ORDER BY RAND() LIMIT 3";
         $result2 = mysqli_query($conn, $query2);
         
@@ -109,20 +117,17 @@ if($result2){
                 <p>Upload Your Blog To Our Website</p>
                 <a href="blog-upload.php"><button type="submit" name="upload_button" class="btn-pink" id="btn-top">Upload</button></a>
             </div>
-
-
-
-
             <!-- working for create post template -->
             <div class="newPost">
                 <h3>New posts</h3>
                 <ul>
-                    <a href="#"><img src="../images/homepage-images/blog image.jpg"></a>
-                    <a href="#">
-                        <p>The post on Instragram</p>
-                        <p>14/06/2024</p>
-                        <p>Bidesh</p>
-                    </a>
+                    <?php 
+                        echo '<a href="#"><img src="../FeatureImage/'.$rownewpost["fetured_image"].'" alt=""></a>';
+                        echo '<a href="#">';
+                        echo '<p> '.$rownewpost['fname'].'</p>';
+                        echo '<p>'.$rownewpost['created_at'].'</p>';
+                        echo '</a>';
+                    ?>
                 </ul>
             </div>
             <div class="popularPost">
