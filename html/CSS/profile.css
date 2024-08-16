@@ -96,6 +96,20 @@ body {
     background: rgb(255, 255, 255);
     color: #000;
 }
+.form-container input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.form-container input[type="button"]:hover {
+    background: rgb(255, 255, 255);
+    color: #000;
+}
 .form-container .image-part,
 .form-container .info-part {
     margin-bottom: 20px;

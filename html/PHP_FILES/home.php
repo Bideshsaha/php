@@ -25,7 +25,7 @@ if($result2){
 ?>
 <?php 
         $querynewpost = "SELECT fname, lname, fetured_image, blogs, created_at FROM blogsotrage ORDER BY created_at DESC LIMIT 1";
-        $resultnewpost = mysqli_query($conn, $querynewpost);
+        $resultnewpost = mysqli_query($conn,$querynewpost);
 
         if ($resultnewpost) {
         $rownewpost = mysqli_fetch_assoc($resultnewpost); // Use mysqli_fetch_assoc for a single row

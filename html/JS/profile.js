@@ -1,12 +1,11 @@
-// {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-// <script> */}
-
 $(document).ready(function() {
     $('#profile-image').on('click', function() {
-        $('#profile_pic').click();
+        $('#profile_picture').click();
+        console.log("hi");
     });
 
-    $('#profile_pic').on('change', function(event) {
+    $('#profile_picture').on('change', function(event) {
+        console.log("hi2");
         var file = event.target.files[0];
         if (file) {
             var reader = new FileReader();
@@ -16,11 +15,24 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
         }
     });
-    // $("#edit").hide();
+
+    $('#edit').on('click', function() {
+        $('.form-control').prop('readonly', false);
+        $('textarea').prop('readonly', false);
+        $('select').prop('disabled', false);
+        $('#profile_picture').prop('disabled', false);
+        // $('#profile_pic').show();
+        $('#profileform').find('input[type="submit"]').show();
+        $(this).hide();
+    });
+
+    
+
     $('#profileform').on('submit', function(e) {
+        console.log("Profile pic submit!!");
+        
         e.preventDefault();
         var formData = new FormData(this);
-        console.log("Form :", formData);
 
         $.ajax({
             url: 'profile-action.php',
@@ -29,14 +41,12 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(response) {
-                console.log("Response :", response)
                 if (response.success) {
                     window.location.reload();
                 } else {
-                    $('#error-message').html(response.message).css("color", "#9e291c",).css("font-size","24px");
+                    $('#error-message').html(response.message).css("color", "#9e291c").css("font-size", "24px");
                 }
             }
         });
     });
-
 });
