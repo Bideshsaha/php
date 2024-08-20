@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
+if($isValid){
+
 
     // Prepare data for insertion/update
     $dob = $_POST["datemax"];
@@ -78,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_query($conn, $finalQuery)) {
         $response['success'] = true;
-        $response['message'] = "Profile updated successfully.";
+        $response['message'] .= "Profile updated successfully.";
     } else {
         $response['message'] .= "Error: Could not execute the query. " . mysqli_error($conn);
     }
-
+};
     echo json_encode($response);
 }

@@ -146,6 +146,7 @@ $row2 = mysqli_fetch_assoc($result2);
                         echo '<input type="submit" value="Save" id="save" name="save">';
                      }else{
                         //  edit button added 
+                        echo"inside else";
                         echo'<input type="submit" value="Save" id="save" name="save" style="display: none;">';
                         echo ' <input type="button" value="Edit" id="edit" name="edit">';
                      }

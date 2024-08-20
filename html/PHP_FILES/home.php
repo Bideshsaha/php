@@ -125,7 +125,7 @@ if($result2){
                         echo '<a href="#"><img src="../FeatureImage/'.$rownewpost["fetured_image"].'" alt=""></a>';
                         echo '<a href="#">';
                         echo '<p> '.$rownewpost['fname'].'</p>';
-                        echo '<p>'.$rownewpost['created_at'].'</p>';
+                        echo '<p>'.date('y-m-d',strtotime($rownewpost['created_at'])).'</p>';
                         echo '</a>';
                     ?>
                 </ul>

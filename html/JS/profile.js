@@ -21,7 +21,6 @@ $(document).ready(function() {
         $('textarea').prop('readonly', false);
         $('select').prop('disabled', false);
         $('#profile_picture').prop('disabled', false);
-        // $('#profile_pic').show();
         $('#profileform').find('input[type="submit"]').show();
         $(this).hide();
     });

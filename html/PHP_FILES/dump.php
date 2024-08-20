@@ -1,3 +1,21 @@
+<?php if(!isset($row2)){
+                        echo '<input type="submit" value="Save" id="save" name="save">';
+                     }else{
+                        //  edit button added 
+                        echo'<input type="submit" value="Save" id="save" name="save" style="display: none;">';
+                        echo ' <input type="button" value="Edit" id="edit" name="edit">';
+                     }
+                    ?>
+
+
+
+
+
+
+
+
+
+
 
 <?php
 session_start();
@@ -441,3 +459,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php  } ;?>
 
 <!-- state -->
+
+
+if (mysqli_query($conn, $finalQuery)) {
+        $response['success'] = true;
+        $response['message'] .= "Profile updated successfully.";
+    } else {
+        $response['message'] .= "Error: Could not execute the query. " . mysqli_error($conn);
+    }
